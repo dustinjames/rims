@@ -77,4 +77,8 @@ Rims::Application.configure do
 
   # Use default logging formatter so that PID and timestamp are not suppressed.
   config.log_formatter = ::Logger::Formatter.new
+
+  #Required for Heroku
+  #Set this to your actual host when deploying into production
+  config.action_mailer.default_url_options = { host: 'localhost:3000' }
 end
