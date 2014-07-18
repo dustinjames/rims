@@ -6,6 +6,8 @@ Rims::Application.routes.draw do
     root :to => "devise/sessions#new"
   end
 
+  get "hub" => "pages#hub"
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

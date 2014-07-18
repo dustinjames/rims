@@ -1,6 +1,6 @@
 class PagesController < ApplicationController
 end
 
-def home
+def hub
 	
 end
