@@ -1,10 +1,9 @@
 class PagesController < ApplicationController
-end
 
-def hub
-	
-end
+	def hub
+	end
 
-def customer_information
+	def customer_information
+	end
 
 end

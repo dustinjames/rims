@@ -5,7 +5,7 @@
   <div class="panel-body">
     <div class="btn-group btn-group-lg btn-group-justified">
     	<div class="btn-group">
-    		<button type="button" class="btn btn-default btn-lg"><%= link_to "Customer Information", controller: "customer_information" =%></button>
+    		<button type="button" class="btn btn-default btn-lg"><%= link_to "Customer Information", customer_information_path %></button>
     	</div>
     	<div class="btn-group">
     		<button type="button" class="btn btn-default btn-lg">Job Information</button>
@@ -35,3 +35,9 @@
     </div>
   </div>
 </div>
+
+<br /><br />
+
+<ul>
+    <li><%= link_to "Customer Information", customer_information_path, :class => "btn btn-default btn-lg" %></li>
+</ul>
