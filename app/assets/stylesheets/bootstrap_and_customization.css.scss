@@ -1,1 +1,17 @@
 @import 'bootstrap';
+
+.fill-parent {
+	width: 100%;
+}
+
+.central-nav {
+	list-style-type: none;
+	float: none;
+	width: 100%;
+	display: table;
+}
+
+.central-nav li {
+	display: table-cell;
+	float: none;
+}
