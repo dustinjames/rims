@@ -1,8 +1,10 @@
-@import 'bootstrap';
+$body-bg:                               #ecf0f1;
+$navbar-default-brand-color:	        #c0392b;
+$navbar-default-bg:                     white;
+$navbar-height:							60px;
 
-.fill-parent {
-	width: 100%;
-}
+
+@import 'bootstrap';
 
 .central-nav {
 	list-style-type: none;

@@ -6,7 +6,6 @@ Rims::Application.routes.draw do
     root :to => "devise/sessions#new"
   end
 
-  get "hub" => "pages#hub"
   get "customer_information" => "pages#customer_information"
 
   # The priority is based upon order of creation: first created -> highest priority.
