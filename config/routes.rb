@@ -7,6 +7,7 @@ Rims::Application.routes.draw do
   end
 
   get "customer_information" => "pages#customer_information"
+  get "new_customer" => "pages#new_customer"
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
