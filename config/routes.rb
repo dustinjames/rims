@@ -1,5 +1,7 @@
 Rims::Application.routes.draw do
 
+  resources :customers
+
   devise_for :users
 
   devise_scope :user do
