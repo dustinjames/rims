@@ -1,6 +1,8 @@
 Rims::Application.routes.draw do
 
-  resources :customers
+  resources :customers do
+    resources :jobs
+  end
 
   devise_for :users
 

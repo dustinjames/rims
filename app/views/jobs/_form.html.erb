@@ -1,0 +1,57 @@
+<%= form_for(@job) do |f| %>
+  <% if @job.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@job.errors.count, "error") %> prohibited this job from being saved:</h2>
+
+      <ul>
+      <% @job.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :install %><br>
+    <%= f.text_field :install %>
+  </div>
+  <div class="field">
+    <%= f.label :delivery %><br>
+    <%= f.text_field :delivery %>
+  </div>
+  <div class="field">
+    <%= f.label :install_date %><br>
+    <%= f.text_field :install_date %>
+  </div>
+  <div class="field">
+    <%= f.label :box_count %><br>
+    <%= f.number_field :box_count %>
+  </div>
+  <div class="field">
+    <%= f.label :cabinet_cost %><br>
+    <%= f.text_field :cabinet_cost %>
+  </div>
+  <div class="field">
+    <%= f.label :counter_top_cost %><br>
+    <%= f.text_field :counter_top_cost %>
+  </div>
+  <div class="field">
+    <%= f.label :install_cost %><br>
+    <%= f.text_field :install_cost %>
+  </div>
+  <div class="field">
+    <%= f.label :payment_one %><br>
+    <%= f.text_field :payment_one %>
+  </div>
+  <div class="field">
+    <%= f.label :payment_two %><br>
+    <%= f.text_field :payment_two %>
+  </div>
+  <div class="field">
+    <%= f.label :payment_three %><br>
+    <%= f.text_field :payment_three %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
