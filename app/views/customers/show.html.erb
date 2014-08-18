@@ -1,44 +1,58 @@
-<p id="notice"><%= notice %></p>
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title center">Customer Information</h3>
+  </div>
+  <div class="panel-body">
+    <div class="table-responsive">
+      <table class="table">
+        <tr>
+          <th>Customer Name</th>
+          <th>Phone Number</th>
+          <th>Email Address</th>
+          <th>Address</th>
+          <th>Customer Type</th>
+        </tr>
 
-<p>
-  <strong>First name:</strong>
-  <%= @customer.first_name %>
-</p>
+        <tr>
+          <td><%= @customer.first_name+ " " + @customer.last_name %></td>
+          <td><%= @customer.phone_number %></td>
+          <td><%= @customer.email_address %></td>
+          <td><%= @customer.address + ", " + @customer.city + ", " + @customer.postal_code %></td>
+          <td><%= @customer.customer_type %></td>
+        </tr>
+      </table>
+  </div>
+  </div>
+</div>
 
-<p>
-  <strong>Last name:</strong>
-  <%= @customer.last_name %>
-</p>
+<br /><br />
 
-<p>
-  <strong>Phone number:</strong>
-  <%= @customer.phone_number %>
-</p>
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title center"><%= @customer.first_name + " " + @customer.last_name + "'s" %> Job History</h3>
+  </div>
+  <div class="panel-body">
+    <div class="table-responsive">
+      <table class="table">
+        <tr>
+          <th>Job Number</th>
+          <th>Job Tag</th>
+          <th>Job Address</th>
+          <th>Install Date</th>
+          <th>Job Revenue</th>
+        </tr>
 
-<p>
-  <strong>Email address:</strong>
-  <%= @customer.email_address %>
-</p>
-
-<p>
-  <strong>Address:</strong>
-  <%= @customer.address %>
-</p>
-
-<p>
-  <strong>City:</strong>
-  <%= @customer.city %>
-</p>
-
-<p>
-  <strong>Postal code:</strong>
-  <%= @customer.postal_code %>
-</p>
-
-<p>
-  <strong>Customer type:</strong>
-  <%= @customer.customer_type %>
-</p>
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+      </table>
+  </div>
+  </div>
+</div>
 
 <%= link_to 'Edit', edit_customer_path(@customer) %> |
 <%= link_to 'Back', customers_path %>
