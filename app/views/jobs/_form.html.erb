@@ -1,4 +1,4 @@
-<%= form_for(@job) do |f| %>
+<%= form_for([@customer, @job], :html => {:class => "form-horizontal"}) do |f| %>
   <% if @job.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@job.errors.count, "error") %> prohibited this job from being saved:</h2>
@@ -11,47 +11,62 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :install %><br>
-    <%= f.text_field :install %>
-  </div>
-  <div class="field">
-    <%= f.label :delivery %><br>
-    <%= f.text_field :delivery %>
-  </div>
-  <div class="field">
-    <%= f.label :install_date %><br>
-    <%= f.text_field :install_date %>
-  </div>
-  <div class="field">
-    <%= f.label :box_count %><br>
-    <%= f.number_field :box_count %>
-  </div>
-  <div class="field">
-    <%= f.label :cabinet_cost %><br>
-    <%= f.text_field :cabinet_cost %>
-  </div>
-  <div class="field">
-    <%= f.label :counter_top_cost %><br>
-    <%= f.text_field :counter_top_cost %>
-  </div>
-  <div class="field">
-    <%= f.label :install_cost %><br>
-    <%= f.text_field :install_cost %>
-  </div>
-  <div class="field">
-    <%= f.label :payment_one %><br>
-    <%= f.text_field :payment_one %>
-  </div>
-  <div class="field">
-    <%= f.label :payment_two %><br>
-    <%= f.text_field :payment_two %>
-  </div>
-  <div class="field">
-    <%= f.label :payment_three %><br>
-    <%= f.text_field :payment_three %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h3 class="panel-title center">Add New Job</h3>
+    </div>
+      <div class="panel-body">
+        <div class="field">
+          <%= f.label :install %><br>
+          <%= f.text_field :install %>
+        </div>
+        <div class="field">
+          <%= f.label :delivery %><br>
+          <%= f.text_field :delivery %>
+        </div>
+        <div class="field">
+          <%= f.label :install_date %><br>
+          <%= f.text_field :install_date %>
+        </div>
+        <div class="field">
+          <%= f.label :box_count %><br>
+          <%= f.number_field :box_count %>
+        </div>
+        <div class="field">
+          <%= f.label :cabinet_cost %><br>
+          <%= f.text_field :cabinet_cost %>
+        </div>
+        <div class="field">
+          <%= f.label :counter_top_cost %><br>
+          <%= f.text_field :counter_top_cost %>
+        </div>
+        <div class="field">
+          <%= f.label :install_cost %><br>
+          <%= f.text_field :install_cost %>
+        </div>
+        <br />
+        <div class="actions">
+          <%= f.submit class: "btn btn-primary" %>
+        </div>
+
+        <br /><br />
+
+        <div id="sandbox-container" class="span5 col-md-5">
+          <div class="input-group date">
+            <input class="form-control" type="text">
+              <span class="input-group-addon">
+                <i class="glyphicon glyphicon-th"></i>
+              </span>
+          </div>
+        </div>
+      </div>
   </div>
 <% end %>
+
+
+<script type="text/javascript">
+    $('#sandbox-container .input-group.date').datepicker({
+      autoclose: true,
+      todayHighlight: true
+    });
+</script>
