@@ -11,7 +11,7 @@ gem 'jbuilder', '~> 1.2'
 gem 'bootstrap-sass'
 gem 'devise', '~> 3.2.4'
 gem 'bootstrap-datepicker-rails', '~>1.3.0.2'
-gem 'simple_form'
+gem 'simple_form', '~>3.1.0.rc2'
 
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.

@@ -1,56 +1,19 @@
-<%= form_for(@customer, :html => {:class => "form-horizontal"}) do |f| %>
-  <% if @customer.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@customer.errors.count, "error") %> prohibited this customer from being saved:</h2>
-
-      <ul>
-      <% @customer.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title center">Add New Customer</h3>
+  </div>
+    <div class="panel-body">
+      <%= simple_form_for(@customer, html: {class:'form-horizontal'}, wrapper: :horizontal_form) do |f| %>
+        <%= f.input :first_name, input_html: {class:'form-control'} %>
+        <%= f.input :last_name, input_html: {class:'form-control'} %>
+        <%= f.input :phone_number, as: :tel, input_html: {class:'form-control'} %>
+        <%= f.input :email_address, as: :email, input_html: {class:'form-control'} %>
+        <%= f.input :address, input_html: {class:'form-control'} %>
+        <%= f.input :city, input_html: {class:'form-control'} %>
+        <%= f.input :postal_code, input_html: {class:'form-control'} %>
+        <%= f.input :customer_type, collection: ["Retail", "Contractor", "Dealer"], input_html: {class:'form-control'}, prompt: "Select Customer Type" %>
+        <br />
+        <%= f.button :submit, input_html: {class:'btn btn-primary'} %>
       <% end %>
-      </ul>
     </div>
-  <% end %>
-    
-    <div class="panel panel-default col-md-8">
-      <div class="panel-heading">
-        <h3 class="panel-title center">Add New Customer</h3>
-      </div>
-        <div class="panel-body">
-          <div class="form-group">
-            <%= f.label :first_name %><br>
-            <%= f.text_field :first_name, class: "form-control"%>
-          </div>
-          <div class="form-group">
-            <%= f.label :last_name %><br>
-            <%= f.text_field :last_name, class: "form-control" %>
-          </div>
-          <div class="form-group">
-            <%= f.label :phone_number %><br>
-            <%= f.text_field :phone_number, class: "form-control" %>
-          </div>
-          <div class="form-group">
-            <%= f.label :email_address %><br>
-            <%= f.text_field :email_address, class: "form-control" %>
-          </div>
-          <div class="form-group">
-            <%= f.label :address %><br>
-            <%= f.text_field :address, class: "form-control" %>
-          </div>
-          <div class="form-group">
-            <%= f.label :city %><br>
-            <%= f.text_field :city, class: "form-control" %>
-          </div>
-          <div class="form-group">
-            <%= f.label :postal_code %><br>
-            <%= f.text_field :postal_code, class: "form-control" %>
-          </div>
-          <div class="form-group">
-            <%= f.label :customer_type %><br>
-            <%= f.select :customer_type, options_for_select(["Retail","Contractor","Dealer"]), {}, class: "form-control" %>
-          </div>
-          <div class="actions">
-            <%= f.submit class: "btn btn-primary"%>
-          </div>
-        </div>
-    </div>
-<% end %>
+</div>
