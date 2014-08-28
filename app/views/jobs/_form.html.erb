@@ -1,55 +1,22 @@
-<%= form_for([@customer, @job], :html => {:class => "form-horizontal"}) do |f| %>
-  <% if @job.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@job.errors.count, "error") %> prohibited this job from being saved:</h2>
-
-      <ul>
-      <% @job.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-  <div class="panel panel-default">
-    <div class="panel-heading">
-      <h3 class="panel-title center">Add New Job</h3>
-    </div>
-      <div class="panel-body">
-        <div class="field">
-          <%= f.label :install %><br>
-          <%= f.text_field :install %>
-        </div>
-        <div class="field">
-          <%= f.label :delivery %><br>
-          <%= f.text_field :delivery %>
-        </div>
-        <div class="field">
-          <%= f.label :install_date %><br>
-          <%= f.text_field :install_date %>
-        </div>
-        <div class="field">
-          <%= f.label :box_count %><br>
-          <%= f.number_field :box_count %>
-        </div>
-        <div class="field">
-          <%= f.label :cabinet_cost %><br>
-          <%= f.text_field :cabinet_cost %>
-        </div>
-        <div class="field">
-          <%= f.label :counter_top_cost %><br>
-          <%= f.text_field :counter_top_cost %>
-        </div>
-        <div class="field">
-          <%= f.label :install_cost %><br>
-          <%= f.text_field :install_cost %>
-        </div>
+<div class="panel panel-default">
+  <div class=" panel-heading">
+    <h3 class="panel-title center">Add New Job</h3>
+  </div>
+    <div class="panel-body">
+      <%= simple_form_for([@customer,@job], html: {class:'form-horizontal'}, wrapper: :horizontal_form) do |f| %>
+        <%= f.input :install, collection: ["Yes", "No"], input_html: {class:'form-control'}, prompt: "Installing?" %>
+        <%= f.input :delivery, collection: ["Yes", "No"], input_html: {class:'form-control'}, prompt: "Delivering?" %>
+        <%= f.input :install_date, input_html: {class:'form-control'} %>
+        <%= f.input :box_count, input_html: {class:'form-control'} %>
+        <%= f.input :cabinet_cost, input_html: {class:'form-control'} %>
+        <%= f.input :counter_top_cost, input_html: {class:'form-control'} %>
+        <%= f.input :install_cost, input_html: {class:'form-control'} %>
         <br />
-        <div class="actions">
-          <%= f.submit class: "btn btn-primary" %>
-        </div>
+        <%= f.button :submit, "Create Job", class: "col-md-3 bump-right" %>
+        <% end %>
+    </div>
+</div>
 
-        <br /><br />
 
         <div id="sandbox-container" class="span5 col-md-5">
           <div class="input-group date">
@@ -61,8 +28,6 @@
         </div>
       </div>
   </div>
-<% end %>
-
 
 <script type="text/javascript">
     $('#sandbox-container .input-group.date').datepicker({
