@@ -10,9 +10,11 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 1.2'
 gem 'bootstrap-sass'
 gem 'devise', '~> 3.2.4'
-gem 'bootstrap-datepicker-rails', '~>1.3.0.2'
 gem 'simple_form', '~>3.1.0.rc2'
 gem 'validates_formatting_of'
+gem 'momentjs-rails', '>= 2.8.1'
+gem 'bootstrap3-datetimepicker-rails', '~> 3.1.2'
+gem 'validates_timeliness', '~> 3.0'
 
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.

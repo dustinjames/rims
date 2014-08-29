@@ -33,7 +33,7 @@
 
 <div class="panel panel-default">
   <div class="panel-heading">
-    <h3 class="panel-title center"><%= @customer.first_name + " " + @customer.last_name + "'s" %> Job History</h3>
+    <h3 class="panel-title center"><%= @customer.first_name + " " + @customer.last_name %> Job History</h3>
   </div>
   <div class="panel-body">
     <div class="table-responsive">
@@ -45,14 +45,15 @@
           <th>Install Date</th>
           <th>Job Revenue</th>
         </tr>
-
+        <% @customer.jobs.each do |job| %>
         <tr>
+          <td><%= link_to job.id, customer_job_path(@customer, job) %></td>
+          <td><%= job.job_tag %></td>
           <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
+          <td><%= job.install_date %></td>
           <td></td>
         </tr>
+        <% end %>
       </table>
   </div>
   </div>

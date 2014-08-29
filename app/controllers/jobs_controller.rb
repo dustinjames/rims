@@ -26,11 +26,12 @@ class JobsController < ApplicationController
   # POST /jobs
   # POST /jobs.json
   def create
-    @job = Job.new(job_params)
+    @customer = Customer.find(params[:customer_id])
+    @job = @customer.jobs.build(job_params)
 
     respond_to do |format|
       if @job.save
-        format.html { redirect_to @job, notice: 'Job was successfully created.' }
+        format.html { redirect_to customer_path(@customer), notice: 'Job was successfully created.' }
         format.json { render action: 'show', status: :created, location: @job }
       else
         format.html { render action: 'new' }
@@ -71,6 +72,6 @@ class JobsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def job_params
-      params.require(:job).permit(:install, :delivery, :install_date, :box_count, :cabinet_cost, :counter_top_cost, :install_cost, :customer_id)
+      params.require(:job).permit(:install, :delivery, :job_tag, :install_date, :box_count, :cabinet_cost, :counter_top_cost, :install_cost, :customer_id)
     end
 end

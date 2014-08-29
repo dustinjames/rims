@@ -6,7 +6,8 @@
       <%= simple_form_for([@customer,@job], html: {class:'form-horizontal'}, wrapper: :horizontal_form) do |f| %>
         <%= f.input :install, collection: ["Yes", "No"], input_html: {class:'form-control'}, prompt: "Installing?" %>
         <%= f.input :delivery, collection: ["Yes", "No"], input_html: {class:'form-control'}, prompt: "Delivering?" %>
-        <%= f.input :install_date, input_html: {class:'form-control'} %>
+        <%= f.input :job_tag, input_html: {class:'form-control'} %>
+        <%= f.input :install_date, :as => :date_picker, input_html: { class: "datepicker"} %>   
         <%= f.input :box_count, input_html: {class:'form-control'} %>
         <%= f.input :cabinet_cost, input_html: {class:'form-control'} %>
         <%= f.input :counter_top_cost, input_html: {class:'form-control'} %>
@@ -16,22 +17,3 @@
         <% end %>
     </div>
 </div>
-
-
-        <div id="sandbox-container" class="span5 col-md-5">
-          <div class="input-group date">
-            <input class="form-control" type="text">
-              <span class="input-group-addon">
-                <i class="glyphicon glyphicon-th"></i>
-              </span>
-          </div>
-        </div>
-      </div>
-  </div>
-
-<script type="text/javascript">
-    $('#sandbox-container .input-group.date').datepicker({
-      autoclose: true,
-      todayHighlight: true
-    });
-</script>

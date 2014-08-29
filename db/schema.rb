@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140818204950) do
+ActiveRecord::Schema.define(version: 20140829210243) do
 
   create_table "customers", force: true do |t|
     t.string   "first_name"
@@ -29,8 +29,8 @@ ActiveRecord::Schema.define(version: 20140818204950) do
   create_table "jobs", force: true do |t|
     t.string   "install"
     t.string   "delivery"
-    t.string   "install_date"
-    t.integer  "box_count"
+    t.date     "install_date",     limit: 255
+    t.string   "box_count"
     t.string   "cabinet_cost"
     t.string   "counter_top_cost"
     t.string   "install_cost"
@@ -40,6 +40,7 @@ ActiveRecord::Schema.define(version: 20140818204950) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "customer_id"
+    t.string   "job_tag"
   end
 
   create_table "users", force: true do |t|
