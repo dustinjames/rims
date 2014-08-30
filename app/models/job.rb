@@ -14,4 +14,8 @@ class Job < ActiveRecord::Base
 	validates :counter_top_cost, numericality: true
 	validates :install_cost, presence: true
 	validates :install_cost, numericality: true
+
+	def revenue
+		cabinet_cost.to_i + counter_top_cost.to_i + install_cost.to_i
+	end
 end

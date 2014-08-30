@@ -51,7 +51,7 @@
           <td><%= job.job_tag %></td>
           <td></td>
           <td><%= job.install_date %></td>
-          <td></td>
+          <td><%= number_to_currency(job.revenue) %></td>
         </tr>
         <% end %>
       </table>
