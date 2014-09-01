@@ -4,6 +4,11 @@ class Job < ActiveRecord::Base
 	validates :install, presence: true
 	validates :delivery, presence: true
 	validates :job_tag, presence: true
+	validates :job_address, presence: true
+	validates_formatting_of :job_address, :using => :alphanum
+	validates :job_city, presence: true
+	validates :job_postal_code, presence: true
+	validates_formatting_of :job_postal_code, :using => :alphanum
 	validates :install_date, presence: true
 	validates_date :install_date
 	validates :box_count, presence: true

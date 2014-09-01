@@ -2,10 +2,13 @@ $body-bg:                               #ecf0f1;
 $navbar-default-brand-color:	        #c0392b;
 $navbar-default-bg:                     white;
 $navbar-height:							60px;
+$btn-primary-bg:						#e67e22;
 
 @import 'bootstrap-sprockets';
 @import 'bootstrap';
 @import 'bootstrap-datetimepicker';
+
+
 .central-nav {
 	list-style-type: none;
 	float: none;

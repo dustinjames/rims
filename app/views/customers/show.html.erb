@@ -1,4 +1,4 @@
-<div class="panel panel-default">
+<div class="panel panel-primary">
   <div class="panel-heading">
     <h3 class="panel-title center">Customer Information</h3>
   </div>
@@ -31,7 +31,7 @@
 
 <br /><br />
 
-<div class="panel panel-default">
+<div class="panel panel-primary">
   <div class="panel-heading">
     <h3 class="panel-title center"><%= @customer.first_name + " " + @customer.last_name %> Job History</h3>
   </div>
@@ -49,8 +49,8 @@
         <tr>
           <td><%= link_to job.id, customer_job_path(@customer, job) %></td>
           <td><%= job.job_tag %></td>
-          <td></td>
-          <td><%= job.install_date %></td>
+          <td><%= job.job_address + ", " + job.job_city + ", " + job.job_postal_code %></td>
+          <td><%= job.install_date.strftime("%B, %d, %Y") %></td>
           <td><%= number_to_currency(job.revenue) %></td>
         </tr>
         <% end %>

@@ -7,6 +7,9 @@
         <%= f.input :install, collection: ["Yes", "No"], input_html: {class:'form-control'}, prompt: "Installing?" %>
         <%= f.input :delivery, collection: ["Yes", "No"], input_html: {class:'form-control'}, prompt: "Delivering?" %>
         <%= f.input :job_tag, input_html: {class:'form-control'} %>
+        <%= f.input :job_address, input_html: {class:'form-control'} %>
+        <%= f.input :job_city, input_html: {class:'form-control'} %>
+        <%= f.input :job_postal_code, input_html: {class:'form-control'} %>
         <%= f.input :install_date, :as => :date_picker, input_html: { class: "datepicker"} %>   
         <%= f.input :box_count, input_html: {class:'form-control'} %>
         <%= f.input :cabinet_cost, input_html: {class:'form-control'} %>
