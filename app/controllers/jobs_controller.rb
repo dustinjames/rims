@@ -11,6 +11,7 @@ class JobsController < ApplicationController
   # GET /jobs/1.json
   def show
     @job = Job.find(params[:id])
+    @customer = Customer.find(params[:customer_id])
   end
 
   # GET /jobs/new
