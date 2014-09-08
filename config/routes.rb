@@ -4,6 +4,10 @@ Rims::Application.routes.draw do
     resources :jobs
   end
 
+  resources :jobs do
+    resources :rooms
+  end
+
   devise_for :users
 
   devise_scope :user do

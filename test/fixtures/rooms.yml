@@ -1,0 +1,51 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  room_type: MyString
+  material: MyString
+  material_details: MyString
+  exterior_colour: MyString
+  interior_colour: MyString
+  upper_door_style: MyString
+  lower_door_style: MyString
+  drawer_front_style: MyString
+  panel_back_style: MyString
+  finished_ends: MyString
+  track_style: MyString
+  drawer_box_style: MyString
+  counter_top_material: MyString
+  counter_top_supplier: MyString
+  counter_top_colour: MyString
+  counter_top_edge: MyString
+  backsplash: MyString
+  sink_install: MyString
+  closed_to_ceiling: MyString
+  crown_molding: MyString
+  under_cabinet_molding: MyString
+  order_name: MyString
+  order_description: MyText
+
+two:
+  room_type: MyString
+  material: MyString
+  material_details: MyString
+  exterior_colour: MyString
+  interior_colour: MyString
+  upper_door_style: MyString
+  lower_door_style: MyString
+  drawer_front_style: MyString
+  panel_back_style: MyString
+  finished_ends: MyString
+  track_style: MyString
+  drawer_box_style: MyString
+  counter_top_material: MyString
+  counter_top_supplier: MyString
+  counter_top_colour: MyString
+  counter_top_edge: MyString
+  backsplash: MyString
+  sink_install: MyString
+  closed_to_ceiling: MyString
+  crown_molding: MyString
+  under_cabinet_molding: MyString
+  order_name: MyString
+  order_description: MyText

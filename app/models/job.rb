@@ -1,5 +1,6 @@
 class Job < ActiveRecord::Base
 	belongs_to :customer
+	has_many :rooms
 
 	validates :install, presence: true
 	validates :delivery, presence: true

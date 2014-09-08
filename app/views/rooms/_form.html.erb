@@ -1,0 +1,33 @@
+<%= simple_form_for([@job, @room]) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :room_type %>
+    <%= f.input :material %>
+    <%= f.input :material_details %>
+    <%= f.input :exterior_colour %>
+    <%= f.input :interior_colour %>
+    <%= f.input :upper_door_style %>
+    <%= f.input :lower_door_style %>
+    <%= f.input :drawer_front_style %>
+    <%= f.input :panel_back_style %>
+    <%= f.input :finished_ends %>
+    <%= f.input :track_style %>
+    <%= f.input :drawer_box_style %>
+    <%= f.input :counter_top_material %>
+    <%= f.input :counter_top_supplier %>
+    <%= f.input :counter_top_colour %>
+    <%= f.input :counter_top_edge %>
+    <%= f.input :backsplash %>
+    <%= f.input :sink_install %>
+    <%= f.input :closed_to_ceiling %>
+    <%= f.input :crown_molding %>
+    <%= f.input :under_cabinet_molding %>
+    <%= f.input :order_name %>
+    <%= f.input :order_description %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

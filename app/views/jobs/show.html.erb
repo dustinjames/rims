@@ -1,121 +1,123 @@
 <div class="col-md-6">
-  <h3 class="info-text">Customer:  <%= @customer.first_name + " " + @customer.last_name %></h3>
+	<h3 class="info-text">CUSTOMER:  <%= @customer.first_name.upcase + " " + @customer.last_name.upcase %></h3>
 </div>
 <div class="col-md-4 pull-right text-right">
-  <h3 class="info-text">Job Number:  <%= @job.id %></h3>
+	<h3 class="info-text">JOB NUMBER:  <%= @job.id %></h3>
 </div>
 <br /><br />
 <hr class="style-one" />
 
 <div class="row">
-    <div class="clearfix">
-        <div class="panel panel-primary col-md-5 drop-padding pull-left">
-          <div class="panel-heading">
-            <h3 class="panel-title center">Customer Information</h3>
-          </div>
-          <div class="panel-body">
-            <div class="table-responsive">
-              <table class="table">
-                <tr>
-                  <td><strong>Customer Name:</strong></td>
-                  <td><%= @customer.first_name + " " + @customer.last_name %></td>
-                </tr>
-                <tr>
-                  <td><strong>Billing Address:</strong></td>
-                  <td><%= @customer.address + ", " + @customer.city + ", " + @customer.postal_code %></td>
-                </tr>
-                <tr>
-                  <td><strong>Phone Number:</strong></td>
-                  <td><%= @customer.phone_number %></td>
-                </tr>
-                <tr>
-                  <td><strong>Email Address:</strong></td>
-                  <td><%= mail_to(@customer.email_address) %></td>
-                </tr>
-                <tr>
-                  <td><strong>Customer Type:</strong></td>
-                  <td><%= @customer.customer_type %></td>
-                </tr>
-              </table>
-            </div>
-          </div>
-        </div>
+		<div class="clearfix">
+				<div class="panel panel-primary col-md-5 drop-padding pull-left">
+					<div class="panel-heading">
+						<h3 class="panel-title center">Customer Information</h3>
+					</div>
+					<div class="panel-body">
+						<div class="table-responsive">
+							<table class="table">
+								<tr>
+									<td><strong>Customer Name:</strong></td>
+									<td><%= @customer.first_name + " " + @customer.last_name %></td>
+								</tr>
+								<tr>
+									<td><strong>Billing Address:</strong></td>
+									<td><%= @customer.address + ", " + @customer.city + ", " + @customer.postal_code %></td>
+								</tr>
+								<tr>
+									<td><strong>Phone Number:</strong></td>
+									<td><%= @customer.phone_number %></td>
+								</tr>
+								<tr>
+									<td><strong>Email Address:</strong></td>
+									<td><%= mail_to(@customer.email_address) %></td>
+								</tr>
+								<tr>
+									<td><strong>Customer Type:</strong></td>
+									<td><%= @customer.customer_type %></td>
+								</tr>
+							</table>
+						</div>
+					</div>
+				</div>
 
-        <div class="panel panel-primary col-md-5 drop-padding pull-right">
-          <div class="panel-heading">
-            <h3 class="panel-title center">Job Information</h3>
-          </div>
-          <div class="panel-body">
-              <table class="table">
-                <tr>
-                  <td><strong>Job Tag:</strong></td>
-                  <td><%= @job.job_tag %></td>
-                </tr>
-                <tr>
-                  <td><strong>Job Address:</strong></td>
-                  <td><%= @job.job_address + ", " + @job.job_city + ", " + @job.job_postal_code %></td>
-                </tr>
-                <tr>
-                  <td><strong>Install:</strong></td>
-                  <td><%= @job.install %></td>
-                </tr>
-                <tr>
-                  <td><strong>Delivery:</strong></td>
-                  <td><%= @job.delivery %></td>
-                </tr>
-                <tr>
-                  <td><strong>Install Date:</strong></td>
-                  <td><%= @job.install_date.strftime("%B, %d, %Y") %></td>
-                </tr>
-              </table>
-          </div>
-        </div>
-    </div>
+				<div class="panel panel-primary col-md-5 drop-padding pull-right">
+					<div class="panel-heading">
+						<h3 class="panel-title center">Job Information</h3>
+					</div>
+					<div class="panel-body">
+							<table class="table">
+								<tr>
+									<td><strong>Job Tag:</strong></td>
+									<td><%= @job.job_tag %></td>
+								</tr>
+								<tr>
+									<td><strong>Job Address:</strong></td>
+									<td><%= @job.job_address + ", " + @job.job_city + ", " + @job.job_postal_code %></td>
+								</tr>
+								<tr>
+									<td><strong>Install:</strong></td>
+									<td><%= @job.install %></td>
+								</tr>
+								<tr>
+									<td><strong>Delivery:</strong></td>
+									<td><%= @job.delivery %></td>
+								</tr>
+								<tr>
+									<td><strong>Install Date:</strong></td>
+									<td><%= @job.install_date.strftime("%B, %d, %Y") %></td>
+								</tr>
+							</table>
+					</div>
+				</div>
+		</div>
 </div>
 
 <hr class="style-one" />
 
 <div class="row">
-  <div class="panel panel-primary">
-    <div class="panel-heading">
-      <h3 class="panel-title center">Room Information</h3>
-    </div>
-    <div class="panel-body">
-      <div class="table-responsive">
-        <table class="table">
-        </table>
-        <%= link_to new_customer_job_path(@customer), class: "btn btn-primary pull-right" do %>
-          <span class="glyphicon glyphicon-plus"></span>&nbsp;&nbsp;Add New Room
-        <% end %>
-      </div>
-    </div>
-  </div>
+	<div class="panel panel-primary">
+		<div class="panel-heading">
+			<h3 class="panel-title center">Room Information</h3>
+		</div>
+		<div class="panel-body">
+			<div class="table-responsive">
+				<table class="table">
+				</table>
+				<div class="pull-right">
+					<%= link_to new_job_room_path(@job), class: "btn btn-primary" do %>
+						<span class="glyphicon glyphicon-plus"></span>&nbsp;&nbsp;Add New Room
+					<% end %>
+				</div>
+			</div>
+		</div>
+	</div>
 </div>
 
 <div class="row">
-  <div class="panel panel-primary">
-    <div class="panel-heading">
-      <h3 class="panel-title center">Accessory Info</h3>
-    </div>
-    <div class="panel-body">
-      <div class="table-responsive">
-        <table class="table">
-        </table>
-      </div>
-    </div>
-  </div>
+	<div class="panel panel-primary">
+		<div class="panel-heading">
+			<h3 class="panel-title center">Accessory Info</h3>
+		</div>
+		<div class="panel-body">
+			<div class="table-responsive">
+				<table class="table">
+				</table>
+			</div>
+		</div>
+	</div>
 </div>
 
 <div class="row">
-  <div class="panel panel-primary">
-    <div class="panel-heading">
-      <h3 class="panel-title center">Appliance Info</h3>
-    </div>
-    <div class="panel-body">
-      <div class="table-responsive">
-        <table class="table">
-        </table>
-      </div>
-    </div>
-  </div>
+	<div class="panel panel-primary">
+		<div class="panel-heading">
+			<h3 class="panel-title center">Appliance Info</h3>
+		</div>
+		<div class="panel-body">
+			<div class="table-responsive">
+				<table class="table">
+				</table>
+			</div>
+		</div>
+	</div>
 </div>

@@ -1,0 +1,71 @@
+<h1>Listing rooms</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Room type</th>
+      <th>Material</th>
+      <th>Material details</th>
+      <th>Exterior colour</th>
+      <th>Interior colour</th>
+      <th>Upper door style</th>
+      <th>Lower door style</th>
+      <th>Drawer front style</th>
+      <th>Panel back style</th>
+      <th>Finished ends</th>
+      <th>Track style</th>
+      <th>Drawer box style</th>
+      <th>Counter top material</th>
+      <th>Counter top supplier</th>
+      <th>Counter top colour</th>
+      <th>Counter top edge</th>
+      <th>Backsplash</th>
+      <th>Sink install</th>
+      <th>Closed to ceiling</th>
+      <th>Crown molding</th>
+      <th>Under cabinet molding</th>
+      <th>Order name</th>
+      <th>Order description</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @rooms.each do |room| %>
+      <tr>
+        <td><%= room.room_type %></td>
+        <td><%= room.material %></td>
+        <td><%= room.material_details %></td>
+        <td><%= room.exterior_colour %></td>
+        <td><%= room.interior_colour %></td>
+        <td><%= room.upper_door_style %></td>
+        <td><%= room.lower_door_style %></td>
+        <td><%= room.drawer_front_style %></td>
+        <td><%= room.panel_back_style %></td>
+        <td><%= room.finished_ends %></td>
+        <td><%= room.track_style %></td>
+        <td><%= room.drawer_box_style %></td>
+        <td><%= room.counter_top_material %></td>
+        <td><%= room.counter_top_supplier %></td>
+        <td><%= room.counter_top_colour %></td>
+        <td><%= room.counter_top_edge %></td>
+        <td><%= room.backsplash %></td>
+        <td><%= room.sink_install %></td>
+        <td><%= room.closed_to_ceiling %></td>
+        <td><%= room.crown_molding %></td>
+        <td><%= room.under_cabinet_molding %></td>
+        <td><%= room.order_name %></td>
+        <td><%= room.order_description %></td>
+        <td><%= link_to 'Show', room %></td>
+        <td><%= link_to 'Edit', edit_room_path(room) %></td>
+        <td><%= link_to 'Destroy', room, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Room', new_room_path %>
