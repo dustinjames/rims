@@ -15,6 +15,7 @@ class RoomsController < ApplicationController
   # GET /rooms/new
   def new
     @job = Job.find(params[:job_id])
+    @customer = @job.customer
     @room = @job.rooms.build
   end
 
@@ -30,7 +31,7 @@ class RoomsController < ApplicationController
 
     respond_to do |format|
       if @room.save
-        format.html { redirect_to job_path(@job), notice: 'Room was successfully created.' }
+        format.html { redirect_to customer_job_path(@customer, @job), notice: 'Room was successfully created.' }
         format.json { render action: 'show', status: :created, location: @room }
       else
         format.html { render action: 'new' }

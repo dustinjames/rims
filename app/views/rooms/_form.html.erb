@@ -1,33 +1,72 @@
-<%= simple_form_for([@job, @room]) do |f| %>
-  <%= f.error_notification %>
+<div class="panel panel-primary">
+    <div class="panel-heading">
+        <h3 class="panel-title center">Add New Room</h3>
+    </div>
+        <div class="panel-body">
 
-  <div class="form-inputs">
-    <%= f.input :room_type %>
-    <%= f.input :material %>
-    <%= f.input :material_details %>
-    <%= f.input :exterior_colour %>
-    <%= f.input :interior_colour %>
-    <%= f.input :upper_door_style %>
-    <%= f.input :lower_door_style %>
-    <%= f.input :drawer_front_style %>
-    <%= f.input :panel_back_style %>
-    <%= f.input :finished_ends %>
-    <%= f.input :track_style %>
-    <%= f.input :drawer_box_style %>
-    <%= f.input :counter_top_material %>
-    <%= f.input :counter_top_supplier %>
-    <%= f.input :counter_top_colour %>
-    <%= f.input :counter_top_edge %>
-    <%= f.input :backsplash %>
-    <%= f.input :sink_install %>
-    <%= f.input :closed_to_ceiling %>
-    <%= f.input :crown_molding %>
-    <%= f.input :under_cabinet_molding %>
-    <%= f.input :order_name %>
-    <%= f.input :order_description %>
-  </div>
+            <%= simple_form_for([@job, @room], html: {class:'form-horizontal'}, wrapper: :horizontal_form) do |f| %>
+              <div class="form-inputs">
+                <div class="col-md-12">
+                    <h3 class="bump-right-two"><u>Room Details</u></h3>
+                </div>
+                <%= f.input :room_type, collection: ["Kitchen", "Bathroom", "Closet", "Island", "Bar", "Furniture", "Laundry Room", "Office", "Miscellaneous", "Custom Order"], prompt: "Select Room Type" %>
+                <%= f.input :material, collection: ["Maple", "Cherry", "Oak", "Hickory", "Walnut", "Bamboo", "Thermowrap", "Melamine", "Olon", "Custom Material"], prompt: "Select Material Type" %>
+                <%= f.input :material_details %>
+                <%= f.input :exterior_colour %>
+                <%= f.input :interior_colour, collection: ["White", "Classic Maple", "Dark Truffle", "Caramel", "Stained", "Pre-finished Plywood"], prompt: "Select Interior Colour" %>
+                <%= f.input :panel_back_style, collection: ["Veneer", "Door Style", "Melamine"], prompt: "Select Panel Back Style" %>
+                <%= f.input :finished_ends, collection: ["Veneer", "Door Style", "Melamine"], prompt: "Select Finished End Material" %>
 
-  <div class="form-actions">
-    <%= f.button :submit %>
-  </div>
-<% end %>
+                <div class="col-md-12">
+                    <hr class="style-one" />
+                    <h3 class="bump-right-two"><u>Door Style Details</u></h3>
+                </div>
+
+                    <%= f.input :upper_door_style %>
+                    <%= f.input :lower_door_style %>
+                    <%= f.input :drawer_front_style %>
+
+                <div class="col-md-12">
+                    <hr class="style-one" />
+                    <h3 class="bump-right-two"><u>Drawer Box Details</u></h3>
+                </div>
+
+                <%= f.input :drawer_box_style, collection: ["Dovetail", "Melamine", "Hettich"], prompt: "Choose Drawer Box Style" %>
+                <%= f.input :track_style, collection: ["Tandem", "Hettich", "Accuride"], prompt: "Choose Track Style" %>
+                
+                <div class="col-md-12">
+                    <hr class="style-one" />
+                    <h3 class="bump-right-two"><u>Counter Top Details</u></h3>
+                </div>              
+
+                <%= f.input :counter_top_material, collection: ["Granite", "Quartz", "Corian", "Laminate", "Marble", "Other"], prompt: "Select Counter Top Material" %>
+                <%= f.input :counter_top_supplier, collection: ["Rosehill", "Floform", "Granite Mountain"], prompt: "Select Counter Top Supplier" %>
+                <%= f.input :counter_top_colour %>
+                <%= f.input :counter_top_edge %>
+                <%= f.input :backsplash, collection: ["Yes", "No"], prompt: "Select Backsplash" %>
+                <%= f.input :sink_install, collection: ["Yes", "No"], prompt: "Select Sink Install" %>
+
+                <div class="col-md-12">
+                    <hr class="style-one" />
+                    <h3 class="bump-right-two"><u>Molding Details</u></h3>
+                </div>
+
+                <%= f.input :closed_to_ceiling, collection: ["Yes", "No"], prompt: "Select Closed to Ceiling" %>
+                <%= f.input :crown_molding %>
+                <%= f.input :under_cabinet_molding %>
+
+                <div class="col-md-12">
+                    <hr class="style-one" />
+                    <h3 class="bump-right-two"><u>Custom Order Details</u></h3>
+                </div>
+
+                <%= f.input :order_name %>
+                <%= f.input :order_description %>
+              </div>
+
+              <div class="form-actions">
+                <%= f.button :submit, "Create New Room", class: "col-md-3 bump-right-two" %>
+              </div>
+            <% end %>
+        </div>
+</div>
