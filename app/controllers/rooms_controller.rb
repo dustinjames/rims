@@ -27,6 +27,7 @@ class RoomsController < ApplicationController
   # POST /rooms.json
   def create
     @job = Job.find(params[:job_id])
+    @customer = @job.customer
     @room = @job.rooms.build(room_params)
 
     respond_to do |format|
