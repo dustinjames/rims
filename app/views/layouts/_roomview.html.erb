@@ -1,0 +1,114 @@
+		<% @job.rooms.each do |room| %>
+			<div class="table-responsive">
+				<table class="table">
+							<tr>
+								<h4 class="info-text"><%= room.room_type %> Information</h4>
+							</tr>
+							<tr class="info">
+								<th class="col-md-2 info-text"><u>Room Details</u></th>
+								<th class="col-md-2"></th>
+								<th class="col-md-2 info-text"><u>Door Style Details</u></th>
+								<th class="col-md-2"></th>
+								<th class="col-md-2 info-text"><u>Drawer Box Details</u></th>
+								<th class="col-md-2"></th>
+							</tr>
+							<tr>
+								<td class="col-md-2"><strong>Room Type:</strong></td>
+								<td class="col-md-2"><%= room.room_type %></td>
+								<td class="col-md-2"><strong>Upper Door Style:</strong></td>
+								<td class="col-md-2"><%= room.upper_door_style %></td>
+								<td class="col-md-2"><strong>Drawer Box Style:</strong></td>
+								<td class="col-md-2"><%= room.drawer_box_style %></td>
+							</tr>
+							<tr>
+								<td class="col-md-2"><strong>Material Type:</strong></td>
+								<td class="col-md-2"><%= room.material %></td>
+								<td class="col-md-2"><strong>Lower Door Style:</strong></td>
+								<td class="col-md-2"><%= room.lower_door_style %></td>
+								<td class="col-md-2"><strong>Drawer Track Style:</strong></td>
+								<td class="col-md-2"><%= room.track_style %></td>
+							</tr>
+							<tr>
+								<td class="col-md-2"><strong>Material Details:</strong></td>
+								<td class="col-md-2"><%= room.material_details %></td>
+								<td class="col-md-2"><strong>Drawer Front Style:</strong></td>
+								<td class="col-md-2"><%= room.drawer_front_style %></td>
+								<td class="col-md-2"></td>
+								<td class="col-md-2"></td>
+							</tr>
+							<tr>
+								<td class="col-md-2"><strong>Exterior Colour:</strong></td>
+								<td class="col-md-2"><%= room.exterior_colour %></td>
+								<td class="col-md-2"><strong>Panel Back Style:</strong></td>
+								<td class="col-md-2"><%= room.panel_back_style %></td>
+								<td class="col-md-2"></td>
+								<td class="col-md-2"></td>
+							</tr>
+							<tr>
+								<td class="col-md-2"><strong>Interior Colour:</strong></td>
+								<td class="col-md-2"><%= room.interior_colour %></td>
+								<td class="col-md-2"><strong>Finished End Style:</strong></td>
+								<td class="col-md-2"><%= room.finished_ends %></td>
+								<td class="col-md-2"></td>
+								<td class="col-md-2"></td>
+							</tr>
+							<tr class="info">
+								<th class="col-md-2 info-text"><u>Counter Top Details</u></th>
+								<th class="col-md-2"></th>
+								<th class="col-md-2 info-text"><u>Molding Details</u></th>
+								<th class="col-md-2"></th>
+								<th class="col-md-2 info-text"><u>Custom Order Details</u></th>
+								<th class="col-md-2"></th>
+							</tr>		
+							<tr>
+								<td class="col-md-2"><strong>Counter Top Material:</strong></td>
+								<td class="col-md-2"><%= room.counter_top_material %></td>
+								<td class="col-md-2"><strong>Closed To Ceiling:</strong></td>
+								<td class="col-md-2"><%= room.closed_to_ceiling %></td>
+								<td class="col-md-2"><strong>Custom Order Name:</strong></td>
+								<td class="col-md-2"><%= room.order_name %></td>
+							</tr>	
+							<tr>
+								<td class="col-md-2"><strong>Counter Top Supplier:</strong></td>
+								<td class="col-md-2"><%= room.counter_top_supplier %></td>
+								<td class="col-md-2"><strong>Crown Molding:</strong></td>
+								<td class="col-md-2"><%= room.crown_molding %></td>
+								<td class="col-md-2"><strong>Custom Order Details:</strong></td>
+								<td class="col-md-2"><%= room.order_description %></td>
+							</tr>
+							<tr>
+								<td class="col-md-2"><strong>Counter Top Colour:</strong></td>
+								<td class="col-md-2"><%= room.counter_top_colour %></td>
+								<td class="col-md-2"><strong>Under Cabinet Molding:</strong></td>
+								<td class="col-md-2"><%= room.under_cabinet_molding %></td>
+								<td class="col-md-2"></td>
+								<td class="col-md-2"></td>
+							</tr>
+							<tr>
+								<td class="col-md-2"><strong>Counter Top Edge:</strong></td>
+								<td class="col-md-2"><%= room.counter_top_edge %></td>
+								<td class="col-md-2"></td>
+								<td class="col-md-2"></td>
+								<td class="col-md-2"></td>
+								<td class="col-md-2"></td>
+							</tr>
+							<tr>
+								<td class="col-md-2"><strong>Counter Top Backsplash:</strong></td>
+								<td class="col-md-2"><%= room.backsplash %></td>
+								<td class="col-md-2"></td>
+								<td class="col-md-2"></td>
+								<td class="col-md-2"></td>
+								<td class="col-md-2"></td>
+							</tr>
+							<tr>
+								<td class="col-md-2"><strong>Sink Install:</strong></td>
+								<td class="col-md-2"><%= room.sink_install %></td>
+								<td class="col-md-2"></td>
+								<td class="col-md-2"></td>
+								<td class="col-md-2"></td>
+								<td class="col-md-2"></td>
+							</tr>
+					
+				</table>
+			</div>
+		<% end %>
